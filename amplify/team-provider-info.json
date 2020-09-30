@@ -10,6 +10,13 @@
       "StackName": "amplify-amplifynext-dev-70623",
       "StackId": "arn:aws:cloudformation:eu-central-1:004654037231:stack/amplify-amplifynext-dev-70623/bdbcdf90-02da-11eb-a8c8-02946ff1a870",
       "AmplifyAppId": "d7kn770ycxre1"
+    },
+    "categories": {
+      "auth": {
+        "amplifynext78d69917": {
+          "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"380652976279982\",\"client_secret\":\"b04085f22202ed4d3f7e95d381d536bd\"}]"
+        }
+      }
     }
   }
 }

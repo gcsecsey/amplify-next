@@ -29,10 +29,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+# Steps to reproduce baseline
 
----
-
-Initialize a new Next project
+## Initializing a new Next project
 ```
 yarn create next-app
 
@@ -48,7 +47,7 @@ yarn add --dev typescript @types/react @types/node
 
 ```
 
-Initialize Amplify on the project
+## Initializing Amplify on the project
 ```
 # Make sure that Amplify CLI is installed
 sudo npm install -g @aws-amplify/cli
@@ -59,7 +58,17 @@ amplify init
 # ? Start Command: npm run-script dev
 ```
 
-Add authentication
+## Adding Facebook authentication
 ```
 amplify add auth
+
+# How do you want users to be able to sign in? Username
+# Do you want to configure advanced settings? No, I am done.
+# Enter your redirect signin URI: http://localhost:3000/
+# Enter your redirect signout URI: http://localhost:3000/
+# Select the social providers you want to configure for your user pool: Facebook
+
+# Provide app credentials
+
+amplify push
 ```

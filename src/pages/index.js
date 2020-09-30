@@ -1,7 +1,17 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from '../aws-exports';
+
+Amplify.configure(awsconfig);
+
 export default function Home() {
+  async function checkUser() {
+    const user = await Auth.currentAuthenticatedUser();
+    console.log('user: ', user);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,6 +23,15 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <button onClick={() => Auth.federatedSignIn({
+          provider: "Facebook"
+        })}>Sign in with Facebook</button>
+
+        <button onClick={() => Auth.federatedSignIn()}>Sign in with Facebook</button>
+
+        <button onClick={checkUser}>Sign in with Facebook</button>
+
 
         <p className={styles.description}>
           Get started by editing{' '}
