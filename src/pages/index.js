@@ -1,8 +1,9 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
 
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from '../aws-exports';
+import { Login } from '../components/Login';
 
 Amplify.configure(awsconfig);
 
@@ -24,14 +25,7 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <button onClick={() => Auth.federatedSignIn({
-          provider: "Facebook"
-        })}>Sign in with Facebook</button>
-
-        <button onClick={() => Auth.federatedSignIn()}>Sign in with Facebook</button>
-
-        <button onClick={checkUser}>Sign in with Facebook</button>
-
+        <Login />
 
         <p className={styles.description}>
           Get started by editing{' '}
@@ -80,5 +74,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
