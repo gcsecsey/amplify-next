@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Amplify, { Auth, Hub } from 'aws-amplify';
 import awsconfig from '../aws-exports';
 import { CognitoHostedUIIdentityProvider } from '@aws-amplify/auth';
-import { Button, Divider } from "@blueprintjs/core";
 
 Amplify.configure(awsconfig);
 
@@ -44,9 +43,7 @@ export const Login = () => {
         </div>
       ) : (
         <>
-        <Button
-large={true}
-          outlined={true}
+        <button
           onClick={() =>
             Auth.federatedSignIn({
               provider: CognitoHostedUIIdentityProvider.Facebook,
@@ -54,27 +51,14 @@ large={true}
           }
         >
           Facebook Sign In
-        </Button>
-        <Button
-        large={true}
-          outlined={true}
-          fill={true}
-          onClick={() =>
-            Auth.federatedSignIn({
-              provider: CognitoHostedUIIdentityProvider.Google,
-            })
-          }
-        >
-          Google Sign In
-        </Button>
-        <Divider />
-        <Button
+        </button>
+        <button
         onClick={() =>
           Auth.federatedSignIn()
         }
       >
         Open Hosted UI
-      </Button>
+      </button>
       </>
       )}
     </div>

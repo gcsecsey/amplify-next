@@ -4,6 +4,7 @@ import styles from '../styles/Home.module.css';
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from '../aws-exports';
 import { Login } from '../components/Login';
+import { Button, Card, Elevation } from "@blueprintjs/core";
 
 Amplify.configure(awsconfig);
 
@@ -18,6 +19,8 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://unpkg.com/normalize.css@^7.0.0" rel="stylesheet" />
+        <link href="https://unpkg.com/@blueprintjs/core@^3.10.0/lib/css/blueprint.css" rel="stylesheet" />
       </Head>
 
       <main className={styles.main}>
@@ -25,7 +28,9 @@ export default function Home() {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
+        <Card elevation={Elevation.TWO}>
         <Login />
+        </Card>
 
         <p className={styles.description}>
           Get started by editing{' '}

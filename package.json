@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@blueprintjs/core": "^3.33.0",
     "aws-amplify": "^3.3.2",
     "next": "9.5.3",
     "react": "16.13.1",
