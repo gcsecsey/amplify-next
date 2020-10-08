@@ -37,10 +37,13 @@ export const Login = () => {
 
   return (
     <div>
-      <div>User: {user ? JSON.stringify(user.attributes) : 'None'}</div>
       {user ? (
         <div>
           <button onClick={() => Auth.signOut()}>Sign Out</button>
+          {console.log(user)}
+      <pre>Family name: {user.attributes.family_name}</pre>
+      <pre>Given name: {user.attributes.given_name}</pre>
+      <pre>E-mail: {user.attributes.email}</pre>
         </div>
       ) : (
         <>
